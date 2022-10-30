@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes;
+
+    const ADMIN_USER = 1;
+    const REGULAR_USER = 0;
+    protected $table = "users";
 
     /**
      * The attributes that are mass assignable.
@@ -51,5 +56,26 @@ class User extends Authenticatable implements JWTSubject
      */
     public function getJWTCustomClaims() {
         return [];
+    }
+
+
+    public function setFullNameAttribute($name){
+
+          $this->attributes['fullname'] = strtolower($name);
+    }
+
+    public function getFullNameAttribute($name):String {
+        return \ucwords($name);
+    }
+
+
+    public function isAdmin(){
+
+             return $this->isAdmin === User::ADMIN_USER;
+    }
+
+    public function profile(){
+
+          return $this->hasOne(Profile::class,'user_id','id');
     }
 }

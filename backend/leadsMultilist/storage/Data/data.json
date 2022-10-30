@@ -1,0 +1,36 @@
+{
+
+    "data":[
+
+        {
+            "id":1,
+            "fullname":"tijani abdellatif",
+            "email":"a.tijani@multilist.ma",
+            "password":"aqwzsxedc",
+            "confirm":"aqwzsxedc",
+            "isMember":1,
+            "isAdmin":1
+        },
+
+        {
+            "id":2,
+            "fullname":"saad haimeur",
+            "email":"saad@multilist.ma",
+            "password":"aqwzsxedc",
+            "confirm":"aqwzsxedc",
+            "isMember":1,
+            "isAdmin":0
+        },
+
+        {
+            "id":3,
+            "fullname":"Mourad mergoum",
+            "email":"mourad@multilist.ma",
+            "password":"aqwzsxedc",
+            "confirm":"aqwzsxedc",
+            "isMember":1,
+            "isAdmin":0
+        }
+
+    ]
+}

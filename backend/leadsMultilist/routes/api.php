@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\api\AuthController;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\ProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,22 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-// Route::group(['prefix' => 'v1'], function () {
-
-//      Route::post('register', [AuthController::class,'register']);
-//      Route::post('login',[AuthController::class,'login']);
-
-// });
-
-
 Route::group([
     'middleware' => 'api',
     'prefix' => 'v1'
-], function ($router) {
+], function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']);
-    // $router::post('/logout', [AuthController::class, 'logout']);
-    // $router::post('/refresh', [AuthController::class, 'refresh']);
-
+    Route::get('/data',[ProfileController::class,'getData']);
 });

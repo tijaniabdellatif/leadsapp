@@ -1,0 +1,30 @@
+{
+
+    "data":[
+
+        {
+            "id":12,
+            "user_id":1,
+            "avatar":"avatar.png",
+            "bio":"hello im the admin",
+            "designation":"admin"
+        },
+
+        {
+            "id":13,
+            "user_id":2,
+            "avatar":"avatar.png",
+            "bio":"hello i'm the moderator",
+            "designation":"moderator"
+        },
+
+        {
+            "id":14,
+            "user_id":3,
+            "avatar":"avatar.png",
+            "bio":"hello im the reviewer",
+            "designation":"reviewer"
+        }
+
+    ]
+}

@@ -1,12 +1,14 @@
 import {createSlice,createAsyncThunk} from '@reduxjs/toolkit';
 import {toast} from 'react-toastify';
 import customFetch from '../../helpers/axios';
+import {getUserFromLocalStorage,addUserToLocalstorage, removeUserFromLocalstorage} from '../../helpers/storage';
 
 
 const initialState = {
 
     isLoading:false,
-    user:null
+    isSidebarOpen:false,
+    user:getUserFromLocalStorage()
 }
 
 
@@ -16,7 +18,6 @@ async (user,thunkAPI) => {
       try{
 
         const resp = await customFetch.post('/register',user)
-        // initialState.isLoading = true;
         return resp.data
 
       }catch(error){
@@ -54,10 +55,6 @@ async (user,thunkAPI) => {
       try{
 
         const resp = await customFetch.post('/login',user)
-
-        setTimeout(() => {
-          initialState.isLoading = true;
-        },1000)
         return resp.data
 
       }catch(error){
@@ -89,6 +86,22 @@ async (user,thunkAPI) => {
 const userSlice = createSlice({
     name:'user',
     initialState,
+    reducers:{
+
+        toggleSidebar:(state) => {
+
+            state.isSidebarOpen = !state.isSidebarOpen;
+        },
+
+        logoutUser : (state) => {
+
+            state.user = null;
+            state.isSidebarOpen = false;
+            removeUserFromLocalstorage();
+            toast.success('Waiting for your return');
+
+        }
+    },
     extraReducers:{
 
            [registerUser.pending]:(state) => {
@@ -100,6 +113,7 @@ const userSlice = createSlice({
             const { data } = payload;
             state.isLoading = false;
             state.user = data;
+            addUserToLocalstorage(state.user);
             toast.success(`Hello there ${data.fullname}`);
            },
 
@@ -116,12 +130,13 @@ const userSlice = createSlice({
 
      [loginUser.fulfilled]:(state,{payload}) => {
       const { data } = payload;
-      state.isLoading = true;
+      state.isLoading = false;
       state.user = {
           
             'user':data.original.user,
             'token':data.original.access_token
       }
+      addUserToLocalstorage(data.original.user);
       toast.success(`Welcome Back ${data.original.user.fullname}`);
      },
 
@@ -132,4 +147,5 @@ const userSlice = createSlice({
     }
 });
 
+export const {toggleSidebar,logoutUser} = userSlice.actions;
 export default userSlice.reducer;

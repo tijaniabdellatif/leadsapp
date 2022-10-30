@@ -2,9 +2,9 @@ import React,{useState,useEffect} from 'react';
 import Wrapper from '../assets/wrappers/RegisterPage';
 import { ImageHandler,FormRow } from '../components';
 import Logo from "../assets/images/multilist-logo.png";
-import {toast} from 'react-toastify';
 import {useSelector,useDispatch} from 'react-redux';
 import { loginUser, registerUser } from '../features/user/userSlice';
+import { useNavigate,useHistory } from 'react-router-dom';
 
 const initialState = {
 
@@ -18,8 +18,9 @@ const initialState = {
 
 function Register() {
 
+  const navigate = useNavigate();
+ 
   const [values,setValues] = useState(initialState);
-  
 
   const {user,isLoading} = useSelector(store => store.user);
   const dispatch = useDispatch();
@@ -54,6 +55,20 @@ function Register() {
 
         setValues({...values,isMember:!values.isMember});
     }
+
+    useEffect(() => {
+      if (user) {
+       
+          navigate('/');
+          
+          // setTimeout(() => {
+          //   window.location.reload();
+          // },4000)
+       
+      }
+      
+    }, [user, navigate]);
+  
   return (
     <Wrapper className='full-page'>
 
@@ -68,7 +83,7 @@ function Register() {
           <FormRow type="password" labelText='password' name='password' value={values.password} handleChange={handleChange} classes="form-input"/>
           {!values.isMember && <FormRow type="password" labelText='confirm password' name='confirm' value={values.confirm} handleChange={handleChange} classes="form-input" /> } 
           
-           <button type="submit" className='btn btn-block'>
+           <button type="submit" className='btn btn-block' disabled={isLoading}>
             {isLoading ? 'Loading...':'Submit'}
            </button>
 
