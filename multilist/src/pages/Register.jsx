@@ -61,9 +61,9 @@ function Register() {
        
           navigate('/');
           
-          // setTimeout(() => {
-          //   window.location.reload();
-          // },4000)
+          setTimeout(() => {
+            window.location.reload();
+          },5000)
        
       }
       

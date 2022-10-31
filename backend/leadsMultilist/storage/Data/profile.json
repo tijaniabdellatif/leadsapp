@@ -7,7 +7,9 @@
             "user_id":1,
             "avatar":"avatar.png",
             "bio":"hello im the admin",
-            "designation":"admin"
+            "designation":"admin",
+            "location":"null",
+            "adresse":"null"
         },
 
         {
@@ -15,7 +17,9 @@
             "user_id":2,
             "avatar":"avatar.png",
             "bio":"hello i'm the moderator",
-            "designation":"moderator"
+            "designation":"moderator",
+            "location":"null",
+            "adresse":"null"
         },
 
         {
@@ -23,7 +27,9 @@
             "user_id":3,
             "avatar":"avatar.png",
             "bio":"hello im the reviewer",
-            "designation":"reviewer"
+            "designation":"reviewer",
+            "location":"null",
+            "adresse":"null"
         }
 
     ]

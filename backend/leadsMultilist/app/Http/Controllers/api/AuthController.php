@@ -81,10 +81,6 @@ class AuthController extends ApiController
 
         }
 
-
-
-
-
     }
 
 
@@ -102,8 +98,6 @@ class AuthController extends ApiController
         return $this->showAny('You have successfully logged out',200);
     }
 
-    // public function refresh() {
-    //     return $this->createNewToken(auth()->user()->setRememberToken());
-    // }
+
 
 }

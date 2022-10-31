@@ -27,6 +27,7 @@ function App() {
           <Route path='all-leads' element={<AllLeads />} />
           <Route path='add-lead' element={<AddLeads />} />
           <Route path='profile' element={<Profile />} />
+          <Route path='seetings' element={<h1>Coming sonn...</h1>} />
 
       </Route>
       <Route  path='/home' element={<Landing />} />

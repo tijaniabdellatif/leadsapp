@@ -4,7 +4,7 @@ import {FaAlignLeft,FaUserCircle,FaCaretDown} from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux';
 import  ImageHandler  from './ImageHandler';
 import Logo from "../assets/images/multilist-logo.png";
-import { logoutUser, toggleSidebar } from '../features/user/userSlice';
+import { logoutUser, toggleSidebar,logginOut } from '../features/user/userSlice';
 
 const Navbar = () => {
 
@@ -17,8 +17,6 @@ const Navbar = () => {
      dispatch(toggleSidebar());
   }
 
-
-  
   return (
     <Wrapper>
     <div className='nav-center'>
@@ -42,7 +40,7 @@ const Navbar = () => {
           <button
             type='button'
             className='dropdown-btn'
-            onClick={() => dispatch(logoutUser())}
+            onClick={() => dispatch(logginOut())}
           >
             Logout
           </button>

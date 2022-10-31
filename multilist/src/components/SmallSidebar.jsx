@@ -1,27 +1,36 @@
 import React from 'react'
 import Wrapper from '../assets/wrappers/SmallSidebar';
 import { FaTimes } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
 import ImageHandler from './ImageHandler';
 import Logo from '../assets/images/multilist-logo.png';
 import { useSelector,useDispatch } from 'react-redux';
+import { toggleSidebar } from '../features/user/userSlice';
+import NavLinks from './NavLinks';
+
+
 
 const SmallSidebar = () => {
+
+  const {isSidebarOpen} = useSelector((store) => store.user);
+  const dispatch = useDispatch();
+
+  const toggle = () => {
+
+      dispatch(toggleSidebar());
+  }
   return (
     <Wrapper>
-      <div className='sidebar-container show-sidebar'>
+      <div className={isSidebarOpen ? 'sidebar-container show-sidebar': 'sidebar-container'}>
         <div className="content">
-          <button className="close-btn" onClick={() => console.log('yes')}>
+          <button className="close-btn" onClick={toggle}>
             <FaTimes />
           </button>
           <header>
-            <ImageHandler src={Logo} alt="logo" classes='logo' />
+            <ImageHandler src={Logo} alt="logo" classes='logo-tinner' />
           </header>
 
-          <div className="nav-links">
-            navLinks
-          </div>
-
+           <NavLinks toggleSidebar={toggle} />
+        
         </div>
       </div>
     </Wrapper>

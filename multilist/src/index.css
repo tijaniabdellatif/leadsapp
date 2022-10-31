@@ -363,3 +363,13 @@ background-color:rgba(84, 194, 27, 0.09);
 .error-inputs:focus-within{
   background-color:rgba(246, 77, 75, .09);
 }
+
+.logo-tinner{
+
+  width:250px;
+}
+
+.logo-tinner-2{
+
+  width:150px;
+}

@@ -19,6 +19,8 @@ class CreateProfilesTable extends Migration
             $table->string('avatar')->default(null);
             $table->text('bio')->default(null);
             $table->enum('designation',['moderator','admin','reviewer','none'])->default('none');
+            $table->string('location')->default(null);
+            $table->string('adresse')->default(null);
             $table->softDeletes();
             $table->timestamps();
         });
