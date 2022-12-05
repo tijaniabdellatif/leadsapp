@@ -245,39 +245,29 @@ ul {
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
-  transition: var(--transition);
-}
-
+  transition: var(--transition);}
 .form-input:focus-within{
+background-color:rgba(84, 194, 27, 0.09);}
 
-background-color:rgba(84, 194, 27, 0.09);
+.form-input{
 
+  height:60px;
 }
 
-
-
-
-.form-input,
 .form-select,
 .btn-block {
-  height: 35px;
-}
+  height: 35px;}
 .form-row {
-  margin-bottom: 1rem;
-}
-
+  margin-bottom: 1rem;}
 .form-textarea {
-  height: 7rem;
-}
+  height: 7rem;}
 ::placeholder {
   font-family: inherit;
-  color: var(--grey-400);
-}
+  color: var(--grey-400);}
 .form-alert {
   color: var(--red-dark);
   letter-spacing: var(--letterSpacing);
-  text-transform: capitalize;
-}
+  text-transform: capitalize;}
 /* alert */
 
 @keyframes spinner {
@@ -285,53 +275,39 @@ background-color:rgba(84, 194, 27, 0.09);
     transform: rotate(360deg);
   }
 }
-
 .loading {
   width: 6rem;
   height: 6rem;
   border: 5px solid var(--grey-400);
   border-radius: 50%;
   border-top-color: var(--primary-500);
-  animation: spinner 2s linear infinite;
-}
+  animation: spinner 2s linear infinite;}
 .loading-center {
-  margin: 0 auto;
-}
-/* title */
-
+  margin: 0 auto;}
 .title {
-  text-align: center;
-}
-
+  text-align: center;}
 .title-underline {
   background: var(--primary-500);
   width: 7rem;
   height: 0.25rem;
   margin: 0 auto;
-  margin-top: -1rem;
-}
-
+  margin-top: -1rem;}
 .container {
   width: var(--fluid-width);
   max-width: var(--max-width);
-  margin: 0 auto;
-}
+  margin: 0 auto;}
 .full-page {
-  min-height: 100vh;
-}
+  min-height: 100vh;}
 
 .coffee-info {
   text-align: center;
   text-transform: capitalize;
   margin-bottom: 1rem;
-  letter-spacing: var(--letterSpacing);
-}
+  letter-spacing: var(--letterSpacing);}
 .coffee-info span {
-  display: block;
-}
+  display: block;}
 .coffee-info a {
-  color: var(--primary-500);
-}
+  color: var(--primary-500);}
 
 @media screen and (min-width: 992px) {
   .coffee-info {
@@ -346,30 +322,103 @@ background-color:rgba(84, 194, 27, 0.09);
 .Toastify__toast {
   text-transform: capitalize;
   font-size: 0.95rem;
-  letter-spacing: var(--letterSpacing);
-}
+  letter-spacing: var(--letterSpacing);}
 
 
 .error-inputs{
-
   width: 100%;
   padding: 0.375rem 0.75rem;
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--red-dark);
-  transition: var(--transition);
-}
+  transition: var(--transition);}
 
 .error-inputs:focus-within{
-  background-color:rgba(246, 77, 75, .09);
-}
+  background-color:rgba(246, 77, 75, .09);}
 
 .logo-tinner{
-
-  width:250px;
-}
+  width:250px;}
 
 .logo-tinner-2{
+  width:150px;}
 
-  width:150px;
-}
+
+
+.border{
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;}
+  
+
+  .border:hover{
+    border: 1px solid var(--yellow);}
+    
+
+.card{
+  height: 379px;
+  width: 300px;
+  background: grey;
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 70px 63px -60px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;}
+ 
+
+.card0{
+  background: url('./assets/images/undraw.png') center center no-repeat;
+  background-size: 300px;}
+
+.card0:hover{
+    background: url('./assets/images/undraw.png') left center no-repeat;
+    background-size: 600px;}
+ 
+
+ h2{
+    opacity: 0;
+    color:var(--yellow);
+    font-size:1.2rem;
+    padding:0.5rem 0.5rem 0.5rem 0;
+    margin:0 1rem;}
+      
+.card0:hover h2{
+    opacity: 1;}
+  
+
+
+    input[type="file" i]::-webkit-file-upload-button {
+        
+      background: var(--yellow);
+      color:var(--white);
+      margin:0.9rem 0.9rem;
+      border-radius: 15px;
+      padding:0.2rem 0.2rem;
+      font-weight: 300;
+      letter-spacing: var(--letterSpacing);
+      border : 1.5px solid var(--white);
+  }
+
+  .image-handler{
+
+    width: 250px;
+    border: 1px solid var(--yellow);
+    border-radius: 15px;
+    height: 153px;
+    margin:0 auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar{
+
+    height: 151px;
+    border-radius: 15px;
+  }

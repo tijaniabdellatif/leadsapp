@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className='btn-container'>
         <button
           type='button'
-          className='btn'
+          className='btn btn-block'
           onClick={() => setShowLogout(!showLogout)}>
           <FaUserCircle />
           {user?.fullname}

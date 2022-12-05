@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FormRow = ({type,name,value,handleChange,labelText,classes}) => {
+const TextArea = ({cols,rows,placeholder,handleChange,labelText,classes,value,name}) => {
     let newLabel = labelText.charAt(0).toUpperCase() + labelText.slice(1);
   return (
     <div className='form-row'>
@@ -8,15 +8,19 @@ const FormRow = ({type,name,value,handleChange,labelText,classes}) => {
       {newLabel || name} :
     </label>
 
-    <input 
-     type={type} 
+    <textarea 
      name={name}
-     defaultValue={value}
+     rows={rows} 
+     cols={cols}
+     placeholder={placeholder}
      onChange={handleChange}  
      className={classes}
-     />
+     defaultValue={value}
+     style={{ width:"100%",height:'120px' }}>
+       
+    </textarea>
    </div>
   )
 }
 
-export default FormRow;
+export default TextArea;

@@ -25,9 +25,11 @@ Route::group([
     Route::post('/register', [AuthController::class, 'register']);
     Route::get('/data',[ProfileController::class,'getData']);
 
-    Route::group(['middleware' => 'auth'],function(){
+    Route::group(['middleware' => ['auth:api']], function(){
 
         Route::post('/logout',[AuthController::class,'logout']);
-        Route::post('/userprofile',[ProfileController::class,'getInfos']);
+        Route::get('/userprofile/{id}',[ProfileController::class,'getInfos']);
+        Route::get('/allProfiles',[ProfileController::class,'getAllProfiles']);
+        Route::put('/profile/{id}/update',[ProfileController::class,'updateProfile']);
     });
 });

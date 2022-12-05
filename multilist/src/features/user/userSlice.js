@@ -3,20 +3,16 @@ import {toast} from 'react-toastify';
 import customFetch from '../../helpers/axios';
 import {getUserFromLocalStorage,addUserToLocalstorage, removeUserFromLocalstorage} from '../../helpers/storage';
 import axios from 'axios';
+import { getToken } from '../../helpers/utils';
 
 const initialState = {
 
     isLoading:false,
     isSidebarOpen:false,
-    user:getUserFromLocalStorage()
-}
-
-
-const getToken = () => {
-    const result = localStorage.getItem('token');
-    return result ? result : null;
+    user:getUserFromLocalStorage(),
 
 }
+
 
 
 

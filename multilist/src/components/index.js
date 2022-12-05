@@ -4,6 +4,7 @@ import FormRow from './FormRow';
 import Navbar from './Navbar';
 import BigSidebar from './BigSidebar';
 import SmallSidebar from './SmallSidebar';
+import TextArea from './TextArea';
 
 export {
 
@@ -12,6 +13,7 @@ export {
     FormRow,
     Navbar,
     BigSidebar,
-    SmallSidebar
+    SmallSidebar,
+    TextArea
 
 }
